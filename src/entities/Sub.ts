@@ -1,5 +1,5 @@
 
-import { Entity as TOEntity, Column, Index, BeforeInsert, ManyToOne, JoinColumn, OneToMany } from "typeorm";
+import { Entity as TOEntity, Column, Index, ManyToOne, JoinColumn, OneToMany } from "typeorm";
 
 import Entity from './Entity'
 import Post from "./Post";
