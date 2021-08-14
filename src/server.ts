@@ -9,7 +9,7 @@ dotenv.config()
 
 import authRoutes from './routes/auth'
 import postRoutes from './routes/post'
-import subRoutes from './routes/sub'
+import subRoutes from './routes/subs'
 
 import trim from "./middleware/trim";
 const app = express()

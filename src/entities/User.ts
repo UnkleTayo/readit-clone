@@ -1,12 +1,18 @@
-import { IsEmail, Length } from "class-validator";
+import { IsEmail, Length } from 'class-validator'
+import {
+    Entity as TOEntity,
+    Column,
+    Index,
+    BeforeInsert,
+    OneToMany,
+} from 'typeorm'
 import bcrypt from 'bcrypt'
-import { Entity as TOEntity, Column, Index, BeforeInsert, OneToMany } from "typeorm";
 import { Exclude } from 'class-transformer'
+
 import Entity from './Entity'
-import Post from "./Post";
+import Post from './Post'
 
-
-@TOEntity("users")
+@TOEntity('users')
 export default class User extends Entity {
     constructor(user: Partial<User>) {
         super()
@@ -19,7 +25,7 @@ export default class User extends Entity {
     email: string
 
     @Index()
-    @Length(3, 2555, { message: "Username must be at least 3 characters long" })
+    @Length(3, 255, { message: 'Username must be at least 3 characters long' })
     @Column({ unique: true })
     username: string
 
@@ -28,11 +34,11 @@ export default class User extends Entity {
     @Length(6, 255)
     password: string
 
-    @OneToMany(() => Post, post => post.user)
+    @OneToMany(() => Post, (post) => post.user)
     posts: Post[]
 
     @BeforeInsert()
     async hashPassword() {
-        this.password = await bcrypt.hash(this.password, 12)
+        this.password = await bcrypt.hash(this.password, 6)
     }
 }
