@@ -6,13 +6,12 @@ import {
   JoinColumn,
   ManyToOne,
 } from 'typeorm'
-import { makeId } from '../util/helpers'
 
 import Entity from './Entity'
 import Post from './Post'
 import User from './User'
 
-
+import { makeId } from '../util/helpers'
 
 @TOEntity('comments')
 export default class Comment extends Entity {

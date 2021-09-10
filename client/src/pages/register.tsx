@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Register() {
   return (
@@ -10,7 +10,7 @@ export default function Register() {
       </Head>
 
       <div
-        className="h-screen bg-center bg-cover w-36"
+        className="w-40 h-screen bg-center bg-cover"
         style={{ backgroundImage: "url('/images/bricks.jpg')" }}
       ></div>
       <div className="flex flex-col justify-center pl-6">
@@ -64,5 +64,5 @@ export default function Register() {
         </div>
       </div>
     </div>
-  );
+  )
 }
