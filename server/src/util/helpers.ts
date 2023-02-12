@@ -11,7 +11,7 @@ export function makeId(length: number): string {
 }
 
 // https://gist.github.com/codeguy/6684588#gistcomment-2759673
-export function slugify(str: string): string {
+export function slugify(str: string, seperator: string = "_"): string {
   str = str.trim()
   str = str.toLowerCase()
 
@@ -29,5 +29,5 @@ export function slugify(str: string): string {
     .replace(/-+/g, '-') // collapse dashes
     .replace(/^-+/, '') // trim - from start of text
     .replace(/-+$/, '') // trim - from end of text
-    .replace(/-/g, '_')
+    .replace(/-/g, seperator)
 }
